@@ -2,6 +2,12 @@ import React from 'react';
 import ContactList from 'components/ContactList';
 import { getContacts } from 'data/contactApi';
 import Page from 'components/Page';
+import Paper from 'material-ui/Paper';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Input from 'material-ui/Input';
+import IconButton from 'material-ui/IconButton';
+import PersonAdd from 'material-ui-icons/PersonAdd';
 
 interface Props {
   contacts: Contact[];
@@ -28,13 +34,24 @@ export default class extends React.Component<Props, State> {
       .filter(c => c.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
     return (
       <Page>
-        Filter:
-        <input
-          type="text"
-          onChange={this.handleFilterChange}
-          value={filter}
-        />
-        <ContactList contacts={filteredContacts} />
+        <Paper>
+          <AppBar position="static" color="default" style={{position: 'sticky', top: 0}}>
+            <Toolbar>
+              <div style={{flex:1}}>
+                <Input
+                  autoFocus
+                  placeholder="Search contact"
+                  onChange={this.handleFilterChange}
+                  value={filter}
+                />
+              </div>  
+              <IconButton>
+                <PersonAdd />
+              </IconButton>
+            </Toolbar>
+          </AppBar>
+          <ContactList contacts={filteredContacts} />
+        </Paper>
       </Page>  
     )
   }
