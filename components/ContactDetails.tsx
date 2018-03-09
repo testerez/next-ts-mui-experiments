@@ -2,11 +2,12 @@ interface Props {
   contact: Contact;
 }
 
-const ContactDetails = ({ contact }: Props) => console.log(contact) || (
+const ContactDetails = ({ contact }: Props) => (
   <ul>
     {Object.keys(contact).map((k) => (
-      // @ts-ignore
-      <li><b>{k}</b>: {contact[k]}</li>
+      <li key={k}>
+        <b>{k}</b>: {contact[k as keyof Contact]}
+      </li>
     ))}
   </ul>
 )
