@@ -1,19 +1,24 @@
 import React from 'react';
 import Link from 'next/link'
+import List, { ListItem, ListItemText } from 'material-ui/List';
+import Avatar from 'material-ui/Avatar';
 
 interface Props {
   contacts: Contact[];
 }
 
+// <Link href={{ pathname: '/contact', query: { id: c.id } }}>
+
 const ContactList = ({ contacts }: Props) => (
-  <ul>
+  <List component="div">
     {contacts.map(c => (
-      <li key={c.id}>
-        <Link href={{ pathname: '/contact', query: { id: c.id } }}>
-          <a>{c.name}</a>
-        </Link>  
-      </li>
+      <Link key={c.id} href={{ pathname: '/contact', query: { id: c.id } }}>
+        <ListItem button component="a">
+          <Avatar src={c.pictureUrl} />
+          <ListItemText primary={c.name} secondary={c.jobTitle} />
+        </ListItem>
+      </Link>  
     ))}
-  </ul>
+  </List>
 )
 export default ContactList;

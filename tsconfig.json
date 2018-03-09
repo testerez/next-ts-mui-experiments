@@ -1,5 +1,4 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "strict": true,
     "target": "esnext",
@@ -22,7 +21,8 @@
       "dom",
       "es2015",
       "es2016"
-    ]
+    ],
+    "noEmit": true,
   },
   "baseUrl": ".",
 }
