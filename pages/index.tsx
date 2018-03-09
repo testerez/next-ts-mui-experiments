@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactList from 'components/contactList';
+import ContactList from 'components/ContactList';
 import { getContacts } from 'data/contactApi';
 
 interface Props {
@@ -12,7 +12,6 @@ export default class extends React.Component<Props> {
   })
 
   render() {
-    console.log(this.props);
     return (
       <ContactList contacts={this.props.contacts} />
     )
