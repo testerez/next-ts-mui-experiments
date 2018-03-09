@@ -6,14 +6,35 @@ interface Props {
   contacts: Contact[];
 }
 
-export default class extends React.Component<Props> {
+interface State {
+  filter: string;
+}
+
+export default class extends React.Component<Props, State> {
+  state = {filter: ''}
+
   static getInitialProps = async () => ({
     contacts: await getContacts(),
   })
 
+  handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ filter: event.target.value });
+  }
+
   render() {
+    const { filter } = this.state;
+    const filteredContacts = this.props.contacts
+      .filter(c => c.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
     return (
-      <ContactList contacts={this.props.contacts} />
+      <div>
+        Filter:
+        <input
+          type="text"
+          onChange={this.handleFilterChange}
+          value={filter}
+        />
+        <ContactList contacts={filteredContacts} />
+      </div>  
     )
   }
 }
