@@ -4,7 +4,7 @@
 import faker from 'faker';
 
 
-const mockContacts = [...Array(20)].map((_, i) => ({
+const mockContacts = [...Array(50)].map((_, i) => ({
   id: `c${i + 1}`,
   name: faker.name.findName(),
   jobTitle: faker.name.jobTitle(),

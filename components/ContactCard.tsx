@@ -1,0 +1,56 @@
+import React from 'react';
+import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
+import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Button from 'material-ui/Button';
+import Typography from 'material-ui/Typography';
+
+interface Props {
+  contact: Contact;
+}
+
+const ContactCard = ({ contact }: Props) => (
+  <Card>
+    <CardMedia
+      image={contact.pictureUrl}
+      title={contact.name}
+      style={{paddingTop: '60%'}}
+    />
+    <CardContent>
+      <Typography variant="headline" component="h2">
+        {contact.name}
+      </Typography>
+      <Typography variant="caption">
+        {contact.jobTitle}
+      </Typography>
+      <Table>
+        <TableBody>
+          <TableRow>
+            <TableCell/>
+            <TableCell />
+          </TableRow>
+          <TableRow>
+            <TableCell type="head"><b>Email</b></TableCell>
+            <TableCell>{contact.email}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell type="head"><b>Phone</b></TableCell>
+            <TableCell>{contact.phoneNumber}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell type="head"><b>Address</b></TableCell>
+            <TableCell>{contact.address}</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </CardContent>
+    <CardActions>
+      <Button size="small" color="primary">
+        Edit
+      </Button>
+      <Button size="small" color="primary">
+        Delete
+      </Button>
+    </CardActions>
+  </Card>
+)
+export default ContactCard;

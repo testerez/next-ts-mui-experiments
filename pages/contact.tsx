@@ -1,6 +1,7 @@
 import React from 'react';
-import ContactDetails from 'components/ContactDetails';
+import ContactCard from 'components/ContactCard';
 import { getContact } from 'data/contactApi';
+import Page from 'components/Page';
 
 interface Props {
   contact: Contact;
@@ -14,7 +15,9 @@ export default class extends React.Component<Props> {
 
   render() {
     return (
-      <ContactDetails contact={this.props.contact} />
+      <Page>
+        <ContactCard contact={this.props.contact} />
+      </Page>  
     )
   }
 }

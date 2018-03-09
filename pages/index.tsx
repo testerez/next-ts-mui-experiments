@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactList from 'components/ContactList';
 import { getContacts } from 'data/contactApi';
+import Page from 'components/Page';
 
 interface Props {
   contacts: Contact[];
@@ -26,7 +27,7 @@ export default class extends React.Component<Props, State> {
     const filteredContacts = this.props.contacts
       .filter(c => c.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
     return (
-      <div>
+      <Page>
         Filter:
         <input
           type="text"
@@ -34,7 +35,7 @@ export default class extends React.Component<Props, State> {
           value={filter}
         />
         <ContactList contacts={filteredContacts} />
-      </div>  
+      </Page>  
     )
   }
 }
