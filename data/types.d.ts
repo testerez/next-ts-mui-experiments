@@ -1,4 +1,5 @@
 interface Contact {
+  id: string,
   name: string,
   jobTitle: stirng,
   address: string,

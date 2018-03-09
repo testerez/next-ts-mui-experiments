@@ -7,9 +7,9 @@ interface Props {
 }
 
 export default class extends React.Component<Props> {
-  static getInitialProps = async ({ req }: any) => ({
+  static getInitialProps = async ({ query }: any) => ({
     // TODO: hanlde 404 pages
-    contact: await getContact('c1'),
+    contact: await getContact(query.id),
   })
 
   render() {
