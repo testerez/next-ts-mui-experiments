@@ -1,6 +1,6 @@
 import React from 'react';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Table, { TableBody, TableCell, TableRow } from 'material-ui/Table';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 
@@ -19,7 +19,7 @@ const ContactCard = ({ contact }: Props) => (
       <Typography variant="headline" component="h2">
         {contact.name}
       </Typography>
-      <Typography variant="caption">
+      <Typography variant="subheading" color="textSecondary">
         {contact.jobTitle}
       </Typography>
       <Table>
