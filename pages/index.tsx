@@ -8,6 +8,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Input from 'material-ui/Input';
 import IconButton from 'material-ui/IconButton';
 import PersonAdd from 'material-ui-icons/PersonAdd';
+import withRoot from 'core/withRoot';
 
 interface Props {
   contacts: Contact[];

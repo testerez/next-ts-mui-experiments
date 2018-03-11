@@ -7,8 +7,6 @@ interface Props {
   contacts: Contact[];
 }
 
-// <Link href={{ pathname: '/contact', query: { id: c.id } }}>
-
 const ContactList = ({ contacts }: Props) => (
   <List component="div">
     {contacts.map(c => (
