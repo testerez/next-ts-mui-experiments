@@ -9,7 +9,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
-    "skipLibCheck": true,
     "baseUrl": ".",
     "lib": ["dom", "es2017"],
     "noEmit": true

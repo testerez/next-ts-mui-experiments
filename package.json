@@ -12,10 +12,12 @@
     "checkts": "tsc -p . --pretty"
   },
   "lint-staged": {
-    "*.{js,json,css,md,ts,tsx}": [
-      "prettier --write --single-quote --trailing-comma all",
-      "git add"
-    ]
+    "*.{js,json,css,md,ts,tsx}": ["prettier --write", "git add"]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "semi": true
   },
   "dependencies": {
     "@types/faker": "^4.1.2",
