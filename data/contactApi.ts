@@ -3,7 +3,7 @@
 
 import faker from 'faker';
 
-const mockContacts = [...Array(50)].map((_, i) => ({
+let mockContacts = [...Array(50)].map((_, i) => ({
   id: `c${i + 1}`,
   name: faker.name.findName(),
   jobTitle: faker.name.jobTitle(),
@@ -19,3 +19,7 @@ export const getContacts = () => wait(500).then(() => mockContacts);
 
 export const getContact = (id: string) =>
   wait(500).then(() => mockContacts.find(c => c.id === id));
+
+export const deleteContact = (id: string) => {
+  mockContacts = mockContacts.filter(c => c.id !== id);
+};

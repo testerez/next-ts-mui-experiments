@@ -3,10 +3,17 @@ import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Table, { TableBody, TableCell, TableRow } from 'material-ui/Table';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
+import { deleteContact } from 'data/contactApi';
+import Router from 'next/router';
 
 interface Props {
   contact: Contact;
 }
+
+const onDeleteContact = (contactId: string) => {
+  deleteContact(contactId);
+  Router.replace('/');
+};
 
 const ContactCard = ({ contact }: Props) => (
   <Card>
@@ -53,7 +60,11 @@ const ContactCard = ({ contact }: Props) => (
       <Button size="small" color="primary">
         Edit
       </Button>
-      <Button size="small" color="primary">
+      <Button
+        size="small"
+        color="primary"
+        onClick={() => onDeleteContact(contact.id)}
+      >
         Delete
       </Button>
     </CardActions>
