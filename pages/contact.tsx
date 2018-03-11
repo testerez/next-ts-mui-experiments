@@ -2,6 +2,7 @@ import React from 'react';
 import ContactCard from 'components/ContactCard';
 import { getContact } from 'data/contactApi';
 import Page from 'components/Page';
+import Head from 'next/head';
 
 interface Props {
   contact: Contact;
@@ -14,9 +15,13 @@ export default class extends React.Component<Props> {
   });
 
   render() {
+    const { contact } = this.props;
     return (
       <Page>
-        <ContactCard contact={this.props.contact} />
+        <Head>
+          <title>{contact.name}</title>
+        </Head>
+        <ContactCard contact={contact} />
       </Page>
     );
   }

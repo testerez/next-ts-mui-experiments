@@ -8,7 +8,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Input from 'material-ui/Input';
 import IconButton from 'material-ui/IconButton';
 import PersonAdd from 'material-ui-icons/PersonAdd';
-import withRoot from 'core/withRoot';
+import Head from 'next/head';
 
 interface Props {
   contacts: Contact[];
@@ -36,6 +36,9 @@ export default class extends React.Component<Props, State> {
     );
     return (
       <Page>
+        <Head>
+          <title>Contacts</title>
+        </Head>
         <Paper>
           <AppBar
             position="static"
