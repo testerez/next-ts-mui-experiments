@@ -6,6 +6,7 @@ import Typography from 'material-ui/Typography';
 import { deleteContact } from 'data/contactApi';
 import Router from 'next/router';
 import Link from 'next/link';
+import { getPictureUrl } from 'utils/contactUtils';
 
 interface Props {
   contact: Contact;
@@ -19,7 +20,7 @@ const onDeleteContact = (contactId: string) => {
 const ContactCard = ({ contact }: Props) => (
   <Card>
     <CardMedia
-      image={contact.pictureUrl}
+      image={getPictureUrl(contact)}
       title={contact.name}
       style={{ paddingTop: '60%' }}
     />

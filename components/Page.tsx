@@ -1,6 +1,6 @@
 import { withStyles } from 'material-ui/styles';
 import withRoot from 'core/withRoot';
-import { compose } from 'utils/compose';
+import compose from 'compose-function';
 
 const Page = ({ children, classes }: any) => (
   <div className={classes.root}>{children}</div>
