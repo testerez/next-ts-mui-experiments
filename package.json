@@ -9,7 +9,8 @@
     "start": "NODE_PATH=. next start",
     "precommit": "lint-staged && yarn checkts",
     "deploy": "now",
-    "checkts": "tsc -p . --pretty"
+    "checkts": "tsc -p . --pretty",
+    "test": "jest"
   },
   "lint-staged": {
     "*.{js,json,css,md,ts,tsx}": ["prettier --write", "git add"]
@@ -21,6 +22,7 @@
   },
   "dependencies": {
     "@types/compose-function": "^0.0.30",
+    "@types/jest": "^22.2.0",
     "@types/lodash.flowright": "^3.5.3",
     "@types/next": "^2.4.8",
     "@types/react": "^16.0.40",
@@ -28,6 +30,7 @@
     "@types/styled-jsx": "^2.2.2",
     "@zeit/next-typescript": "^0.0.10",
     "compose-function": "^3.0.3",
+    "jest": "^22.4.2",
     "jss-preset-default": "^4.3.0",
     "lodash.flowright": "^3.5.0",
     "material-ui": "^1.0.0-beta.36",
@@ -38,6 +41,7 @@
     "react-dom": "^16.2.0",
     "react-form": "^3.3.2",
     "react-jss": "^8.3.3",
+    "ts-jest": "^22.4.1",
     "typescript": "^2.7.2"
   },
   "devDependencies": {
@@ -45,5 +49,12 @@
     "lint-staged": "^7.0.0",
     "now": "^10.1.5",
     "prettier": "1.11.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   }
 }

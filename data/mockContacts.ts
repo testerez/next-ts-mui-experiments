@@ -494,4 +494,4 @@ export default [
     pictureUrl:
       'https://s3.amazonaws.com/uifaces/faces/twitter/vonachoo/128.jpg',
   },
-];
+] as Contact[];

@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { contactRoute } from 'utils/routes';
 import BackIcon from 'material-ui-icons/ArrowBack';
 import DoneIcon from 'material-ui-icons/Done';
+import * as validate from 'utils/validate';
 
 interface Props {
   contact?: Contact;
@@ -27,9 +28,10 @@ const onSubmit = (contact?: Contact) => async (values: any) => {
 };
 
 const ContactForm = ({ contact }: Props) => (
-  <Form onSubmit={onSubmit(contact)} defaultValues={contact}>
+  // @ts-ignore
+  <Form onSubmit={onSubmit(contact)} defaultValues={contact} validateOnSubmit>
     {formApi => (
-      <form onSubmit={formApi.submitForm}>
+      <form onSubmit={formApi.submitForm} noValidate>
         <Card>
           <AppBar
             position="static"
@@ -50,12 +52,29 @@ const ContactForm = ({ contact }: Props) => (
             </Toolbar>
           </AppBar>
           <CardContent>
-            <FormTextField field="name" label="Name" />
+            <FormTextField
+              field="name"
+              label="Name"
+              required
+              validate={validate.required('Name is required')}
+            />
             <FormTextField field="jobTitle" label="Job title" />
             <FormTextField field="address" label="Address" />
-            <FormTextField field="phoneNumber" label="Phone number" />
-            <FormTextField field="email" label="Email" />
-            <FormTextField field="pictureUrl" label="Picture url" />
+            <FormTextField
+              field="phoneNumber"
+              label="Phone number"
+              validate={validate.phone}
+            />
+            <FormTextField
+              field="email"
+              label="Email"
+              validate={validate.email}
+            />
+            <FormTextField
+              field="pictureUrl"
+              label="Picture url"
+              validate={validate.url}
+            />
           </CardContent>
         </Card>
       </form>
