@@ -3862,6 +3862,10 @@ normalize-scroll-left@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-scroll-left/-/normalize-scroll-left-0.1.2.tgz#6b79691ba79eb5fb107fa5edfbdc06b55caee2aa"
 
+now@^10.1.5:
+  version "10.1.5"
+  resolved "https://registry.yarnpkg.com/now/-/now-10.1.5.tgz#6d5ed80723aacf101103a200f56635cf870872fb"
+
 npm-path@^2.0.2:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/npm-path/-/npm-path-2.0.4.tgz#c641347a5ff9d6a09e4d9bce5580c4f505278e64"
