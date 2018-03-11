@@ -5,9 +5,10 @@ import Page from 'components/Page';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
-import Input from 'material-ui/Input';
+import Input, { InputAdornment } from 'material-ui/Input';
 import IconButton from 'material-ui/IconButton';
-import PersonAdd from 'material-ui-icons/PersonAdd';
+import PersonAddIcon from 'material-ui-icons/PersonAdd';
+import SearchIcon from 'material-ui-icons/Search';
 import Head from 'next/head';
 
 interface Props {
@@ -49,13 +50,18 @@ export default class extends React.Component<Props, State> {
               <div style={{ flex: 1 }}>
                 <Input
                   autoFocus
-                  placeholder="Search contact"
+                  placeholder="Contact name"
                   onChange={this.handleFilterChange}
                   value={filter}
+                  startAdornment={
+                    <InputAdornment position="start">
+                      <SearchIcon />
+                    </InputAdornment>
+                  }
                 />
               </div>
               <IconButton>
-                <PersonAdd />
+                <PersonAddIcon />
               </IconButton>
             </Toolbar>
           </AppBar>
