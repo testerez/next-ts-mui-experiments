@@ -10,6 +10,7 @@ import IconButton from 'material-ui/IconButton';
 import PersonAddIcon from 'material-ui-icons/PersonAdd';
 import SearchIcon from 'material-ui-icons/Search';
 import Head from 'next/head';
+import Link from 'next/link';
 
 interface Props {
   contacts: Contact[];
@@ -60,9 +61,11 @@ export default class extends React.Component<Props, State> {
                   }
                 />
               </div>
-              <IconButton>
-                <PersonAddIcon />
-              </IconButton>
+              <Link href="/edit">
+                <IconButton>
+                  <PersonAddIcon />
+                </IconButton>
+              </Link>
             </Toolbar>
           </AppBar>
           <ContactList contacts={filteredContacts} />

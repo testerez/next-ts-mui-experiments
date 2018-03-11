@@ -5,6 +5,7 @@ import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import { deleteContact } from 'data/contactApi';
 import Router from 'next/router';
+import Link from 'next/link';
 
 interface Props {
   contact: Contact;
@@ -57,9 +58,11 @@ const ContactCard = ({ contact }: Props) => (
       </Table>
     </CardContent>
     <CardActions>
-      <Button size="small" color="primary">
-        Edit
-      </Button>
+      <Link href={{ pathname: '/edit', query: { id: contact.id } }}>
+        <Button size="small" color="primary">
+          Edit
+        </Button>
+      </Link>
       <Button
         size="small"
         color="primary"

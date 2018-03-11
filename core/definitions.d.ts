@@ -9,3 +9,7 @@ declare namespace NodeJS {
     browser: boolean;
   }
 }
+
+interface StyleProps {
+  classes: { [k: string]: string };
+}
