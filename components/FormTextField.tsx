@@ -11,9 +11,9 @@ interface Props {
 
 const FormTextField = ({ field, label }: Props) => (
   <Field field={field}>
-    {({ setValue }: any) => (
+    {({ setValue, value }: any) => (
       <TextField
-        label={label}
+        {...{ label, value }}
         fullWidth
         margin="normal"
         onChange={e => setValue(e.target.value)}

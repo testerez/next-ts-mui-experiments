@@ -21,7 +21,7 @@ const onSubmit = (contact?: Contact) => async (values: any) => {
 };
 
 const ContactForm = ({ contact, classes }: Props & StyleProps) => (
-  <Form onSubmit={onSubmit(contact)}>
+  <Form onSubmit={onSubmit(contact)} defaultValues={contact}>
     {formApi => (
       <form onSubmit={formApi.submitForm}>
         <Card>
