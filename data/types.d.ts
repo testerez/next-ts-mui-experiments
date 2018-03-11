@@ -1,7 +1,7 @@
 interface Contact {
   id: string;
   name: string;
-  jobTitle: stirng;
+  jobTitle: string;
   address: string;
   phoneNumber: string;
   email: string;
