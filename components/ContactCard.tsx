@@ -13,7 +13,7 @@ const ContactCard = ({ contact }: Props) => (
     <CardMedia
       image={contact.pictureUrl}
       title={contact.name}
-      style={{paddingTop: '60%'}}
+      style={{ paddingTop: '60%' }}
     />
     <CardContent>
       <Typography variant="headline" component="h2">
@@ -25,19 +25,25 @@ const ContactCard = ({ contact }: Props) => (
       <Table>
         <TableBody>
           <TableRow>
-            <TableCell/>
+            <TableCell />
             <TableCell />
           </TableRow>
           <TableRow>
-            <TableCell type="head"><b>Email</b></TableCell>
+            <TableCell type="head">
+              <b>Email</b>
+            </TableCell>
             <TableCell>{contact.email}</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell type="head"><b>Phone</b></TableCell>
+            <TableCell type="head">
+              <b>Phone</b>
+            </TableCell>
             <TableCell>{contact.phoneNumber}</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell type="head"><b>Address</b></TableCell>
+            <TableCell type="head">
+              <b>Address</b>
+            </TableCell>
             <TableCell>{contact.address}</TableCell>
           </TableRow>
         </TableBody>
@@ -52,5 +58,5 @@ const ContactCard = ({ contact }: Props) => (
       </Button>
     </CardActions>
   </Card>
-)
+);
 export default ContactCard;

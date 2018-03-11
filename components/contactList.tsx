@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 
@@ -15,8 +15,8 @@ const ContactList = ({ contacts }: Props) => (
           <Avatar src={c.pictureUrl} />
           <ListItemText primary={c.name} secondary={c.jobTitle} />
         </ListItem>
-      </Link>  
+      </Link>
     ))}
   </List>
-)
+);
 export default ContactList;

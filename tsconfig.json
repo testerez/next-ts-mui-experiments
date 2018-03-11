@@ -14,15 +14,9 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016"
-    ],
-    "noEmit": true,
+    "typeRoots": ["./node_modules/@types"],
+    "lib": ["dom", "es2015", "es2016"],
+    "noEmit": true
   },
-  "baseUrl": ".",
+  "baseUrl": "."
 }

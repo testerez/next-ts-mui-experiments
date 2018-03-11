@@ -19,33 +19,38 @@ interface State {
 }
 
 export default class extends React.Component<Props, State> {
-  state = {filter: ''}
+  state = { filter: '' };
 
   static getInitialProps = async () => ({
     contacts: await getContacts(),
-  })
+  });
 
   handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ filter: event.target.value });
-  }
+  };
 
   render() {
     const { filter } = this.state;
-    const filteredContacts = this.props.contacts
-      .filter(c => c.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
+    const filteredContacts = this.props.contacts.filter(
+      c => c.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1,
+    );
     return (
       <Page>
         <Paper>
-          <AppBar position="static" color="default" style={{position: 'sticky', top: 0}}>
+          <AppBar
+            position="static"
+            color="default"
+            style={{ position: 'sticky', top: 0 }}
+          >
             <Toolbar>
-              <div style={{flex:1}}>
+              <div style={{ flex: 1 }}>
                 <Input
                   autoFocus
                   placeholder="Search contact"
                   onChange={this.handleFilterChange}
                   value={filter}
                 />
-              </div>  
+              </div>
               <IconButton>
                 <PersonAdd />
               </IconButton>
@@ -53,7 +58,7 @@ export default class extends React.Component<Props, State> {
           </AppBar>
           <ContactList contacts={filteredContacts} />
         </Paper>
-      </Page>  
-    )
+      </Page>
+    );
   }
 }

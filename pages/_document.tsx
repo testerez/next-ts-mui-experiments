@@ -22,7 +22,7 @@ class MyDocument extends Document {
     // On the client
     // 1. page.getInitialProps
     // 3. page.render
-  
+
     // Get the context to collected side effects.
     const context = getContext();
     const page = ctx.renderPage((Component: any) => (props: any) => (
@@ -30,7 +30,7 @@ class MyDocument extends Document {
         <Component {...props} />
       </JssProvider>
     ));
-  
+
     return {
       ...page,
       stylesContext: context,
@@ -38,12 +38,14 @@ class MyDocument extends Document {
         <style
           id="jss-server-side"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: context.sheetsRegistry.toString() }}
+          dangerouslySetInnerHTML={{
+            __html: context.sheetsRegistry.toString(),
+          }}
         />
       ),
     };
   };
-  
+
   render() {
     return (
       <html lang="en" dir="ltr">
@@ -64,7 +66,10 @@ class MyDocument extends Document {
           */}
           <link rel="manifest" href="/static/manifest.json" />
           {/* PWA primary color */}
-          <meta name="theme-color" content={this.props.stylesContext.theme.palette.primary[500]} />
+          <meta
+            name="theme-color"
+            content={this.props.stylesContext.theme.palette.primary[500]}
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"

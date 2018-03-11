@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { withStyles, MuiThemeProvider } from 'material-ui/styles';
 import getContext from 'core/getContext';
 
-
 const AppWrapper = withStyles(theme => ({
   '@global': {
     html: {

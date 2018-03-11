@@ -2,11 +2,8 @@ import { withStyles } from 'material-ui/styles';
 import withRoot from 'core/withRoot';
 import { compose } from 'utils/compose';
 
-
 const Page = ({ children, classes }: any) => (
-  <div className={classes.root}>
-    {children}
-  </div>
+  <div className={classes.root}>{children}</div>
 );
 
 export default compose(
@@ -19,12 +16,12 @@ export default compose(
     '@media (min-width: 450px)': {
       root: {
         padding: '20px',
-      }
+      },
     },
     '@media (min-width: 800px)': {
       root: {
         padding: '40px',
-      }
+      },
     },
   }),
 )(Page);
