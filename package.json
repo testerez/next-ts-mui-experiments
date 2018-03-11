@@ -7,8 +7,9 @@
     "dev": "NODE_PATH=. next",
     "build": "NODE_PATH=. next build",
     "start": "NODE_PATH=. next start",
-    "precommit": "lint-staged",
-    "deploy": "now"
+    "precommit": "lint-staged && yarn checkts",
+    "deploy": "now",
+    "checkts": "tsc -p ."
   },
   "lint-staged": {
     "*.{js,json,css,md,ts,tsx}": [
